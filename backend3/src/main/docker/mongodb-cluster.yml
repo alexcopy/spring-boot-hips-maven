@@ -1,0 +1,17 @@
+version: '2'
+services:
+    backend3-mongodb:
+        container_name: backend3-mongodb
+        image: mongo:3.2.10
+        ports:
+            - "27017:27017"
+        command: mongos --configdb backend3-mongodb-config
+    backend3-mongodb-node:
+        build:
+            context: .
+            dockerfile: mongodb/MongoDB.Dockerfile
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+    backend3-mongodb-config:
+        image: mongo:3.2.10
+        container_name: backend3-mongodb-config
+        command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db

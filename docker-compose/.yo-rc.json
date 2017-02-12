@@ -1,0 +1,16 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "backend",
+      "backend2",
+      "backend3",
+      "gate"
+    ],
+    "directoryPath": "../",
+    "clusteredDbApps": [],
+    "monitoring": "elk",
+    "serviceDiscoveryType": "eureka",
+    "adminPassword": "admin",
+    "jwtSecretKey": "6dc4e72072bd2aa2f7d8c4ed2d76533ab9218dab"
+  }
+}
